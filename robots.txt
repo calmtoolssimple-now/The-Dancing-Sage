@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://calmtoolssimple-now.github.io/The-Dancing-Sage/sitemap.txt
+
+Sitemap: https://calmtoolssimple-now.github.io/The-Dancing-Sage/sitemap.xml
