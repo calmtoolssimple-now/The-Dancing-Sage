@@ -16,11 +16,11 @@
   <title>The Dancing Sage Wisdom Library | Calm and Simple</title>
   <meta name="description" content="A gentle wisdom library from The Dancing Sage with reflections on calm, rest, nature, stress relief, and returning to yourself." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://calmtoolssimple-now.github.io/calm-reset-tool/wisdom.html" />
+  <link rel="canonical" href="https://calmtoolssimple-now.github.io/The-Dancing-Sage/wisdom.html" />
   <meta property="og:title" content="The Dancing Sage Wisdom Library" />
   <meta property="og:description" content="Gentle reflections for women seeking calm, rest, and a return to themselves." />
-  <meta property="og:url" content="https://calmtoolssimple-now.github.io/calm-reset-tool/wisdom.html" />
-  <meta property="og:image" content="https://calmtoolssimple-now.github.io/calm-reset-tool/calmheader.png" />
+  <meta property="og:url" content="https://calmtoolssimple-now.github.io/The-Dancing-Sage/wisdom.html" />
+  <meta property="og:image" content="https://calmtoolssimple-now.github.io/The-Dancing-Sage/calmheader.png" />
 
   <style>
     * { box-sizing: border-box; }
@@ -37,6 +37,15 @@
     .button-link { display:inline-block; margin-top:14px; background:var(--clay); color:#fff; padding:12px 17px; border-radius:999px; text-decoration:none; font-family:Arial,sans-serif; }
     .article-card { padding:24px; border-radius:22px; background:#fffaf4; border:1px solid rgba(110,147,133,.22); margin:16px 0; }
     .article-card h2 { margin-top:0; }
+    .library-tools { background:#f7fbf8; }
+    .search-label { display:block; margin-bottom:8px; color:var(--deep-sage); font:700 16px Arial,sans-serif; }
+    #wisdomSearch { width:100%; padding:14px 16px; border:1px solid rgba(70,102,91,.4); border-radius:14px; background:white; color:var(--ink); font:17px Arial,sans-serif; }
+    #wisdomSearch:focus { outline:3px solid rgba(110,147,133,.22); border-color:var(--deep-sage); }
+    .topic-list { display:flex; flex-wrap:wrap; gap:9px; margin-top:14px; }
+    .topic-button { border:1px solid rgba(70,102,91,.28); border-radius:999px; padding:9px 13px; background:#fffaf4; color:var(--deep-sage); font:700 14px Arial,sans-serif; cursor:pointer; }
+    .topic-button:hover,.topic-button:focus { background:var(--deep-sage); color:white; }
+    .topic-line { color:#6a776f; font-size:14px; margin:10px 0 0; }
+    .no-results { display:none; text-align:center; padding:28px 10px; }
     .article { max-width:760px; margin:0 auto; }
     .article p { font-size:18px; }
     .signature { font-family:Georgia,'Times New Roman',serif; color:var(--deep-sage); font-size:22px; }
@@ -47,6 +56,9 @@
 </head>
 <body>
   <main class="wrap">
+    <nav class="card" aria-label="Main navigation">
+      <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="wisdom.html" aria-current="page">Wisdom Library</a> · <a href="contact.html">Contact</a>
+    </nav>
     <section class="hero">
       <p class="eyebrow">Calm & Simple presents</p>
       <h1>The Dancing Sage's Wisdom Library</h1>
@@ -54,7 +66,24 @@
       <a href="index.html">← Return to Ask The Dancing Sage</a>
     </section>
 
-    <section class="card">
+    <section class="card library-tools" aria-labelledby="find-wisdom-heading">
+      <h2 id="find-wisdom-heading">Find What You Need Today</h2>
+      <p>Search in everyday language—for example: <em>stress, tired, boundaries, loneliness, starting over, patience, grief</em>, or <em>self-kindness</em>.</p>
+      <label class="search-label" for="wisdomSearch">Search the Wisdom Library</label>
+      <input id="wisdomSearch" type="search" placeholder="What are you carrying today?" autocomplete="off">
+      <div class="topic-list" aria-label="Popular topics">
+        <button class="topic-button" type="button" data-topic="stress overwhelm anxiety">Stress &amp; Overwhelm</button>
+        <button class="topic-button" type="button" data-topic="tired rest exhaustion">Rest &amp; Exhaustion</button>
+        <button class="topic-button" type="button" data-topic="boundaries saying no">Boundaries</button>
+        <button class="topic-button" type="button" data-topic="kindness self compassion">Self-Kindness</button>
+        <button class="topic-button" type="button" data-topic="change beginning again uncertainty">Change &amp; Starting Over</button>
+        <button class="topic-button" type="button" data-topic="joy calm peace">Calm &amp; Joy</button>
+        <button class="topic-button" type="button" data-topic="">Show All</button>
+      </div>
+      <p id="resultCount" class="topic-line" aria-live="polite">Showing all reflections.</p>
+    </section>
+
+    <section class="card" id="wisdomArticles" aria-label="Wisdom reflections">
       <div class="article-card">
         <h2>Sometimes the Body Remembers What the Mind Has Forgotten</h2>
         <p>A reflection on how the body often remembers peace before the mind does.</p>
@@ -191,7 +220,78 @@
         <p>Home is not always a place. Sometimes it is the moment we stop abandoning ourselves.</p>
         <a class="button-link" href="coming-home-to-yourself.html">Read Reflection →</a>
       </div>
+      <p id="noResults" class="no-results">No reflection matched those words. Try a simpler word such as “rest,” “change,” “kindness,” or “stress.”</p>
     </section>
+    <footer class="card">
+      <a href="privacy.html">Privacy Policy</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="index.html">Home</a>
+      <p>© 2026 Calm &amp; Simple · The Dancing Sage</p>
+    </footer>
   </main>
+  <script>
+    const wisdomKeywords = {
+      "body-remembers.html": "stress anxiety grounding body awareness nervous system calm overwhelmed",
+      "river-never-hurries.html": "patience urgency rushing slow down stress pressure",
+      "what-trees-know-about-patience.html": "patience growth resilience trust waiting uncertainty",
+      "a-letter-to-the-tired-woman.html": "tired exhaustion burnout caregiving overwhelmed rest women",
+      "quiet-courage.html": "courage confidence fear strength difficult days",
+      "let-the-wind-carry-it.html": "letting go burdens worry stress release control",
+      "the-wildflower-way.html": "self compassion kindness acceptance comparison belonging",
+      "a-cup-of-peace.html": "peace calm morning pause tea mindfulness",
+      "walking-through-fog.html": "uncertainty confusion next step fear change unclear future",
+      "the-season-of-enough.html": "enough contentment self worth comparison gratitude",
+      "barefoot-wisdom.html": "grounding nature reconnect body calm outdoors",
+      "the-grace-of-beginning-again.html": "starting over change new beginning regret shame resilience",
+      "the-soft-strength-of-kindness.html": "kindness compassion strength gentleness relationships",
+      "when-the-sea-speaks.html": "ocean nature listening wisdom calm reflection",
+      "rest-is-not-falling-behind.html": "rest guilt productivity burnout exhaustion permission tired",
+      "gathering-the-scattered-pieces.html": "healing overwhelmed focus scattered stress recovery",
+      "the-lantern-within.html": "hope low mood difficult days inner strength encouragement",
+      "let-joy-be-simple.html": "joy happiness gratitude simple pleasures contentment",
+      "a-gentle-no.html": "boundaries saying no assertiveness people pleasing guilt",
+      "the-wisdom-of-slow-mornings.html": "morning routine slow living stress calm mindfulness",
+      "unclenching-the-heart.html": "grief sadness worry emotional healing letting go",
+      "the-path-through-the-meadow.html": "uncertainty direction decisions next step trust",
+      "coming-home-to-yourself.html": "identity self discovery reconnect women self worth belonging"
+    };
+
+    const searchInput = document.getElementById('wisdomSearch');
+    const cards = Array.from(document.querySelectorAll('#wisdomArticles .article-card'));
+    const noResults = document.getElementById('noResults');
+    const resultCount = document.getElementById('resultCount');
+
+    cards.forEach(card => {
+      const link = card.querySelector('a[href]');
+      const keywords = link ? wisdomKeywords[link.getAttribute('href')] || '' : '';
+      card.dataset.search = (card.textContent + ' ' + keywords).toLowerCase();
+      if (keywords) {
+        const topic = document.createElement('p');
+        topic.className = 'topic-line';
+        topic.textContent = 'Helpful for: ' + keywords.split(' ').slice(0, 5).join(', ') + '.';
+        card.insertBefore(topic, link);
+      }
+    });
+
+    function filterWisdom(value) {
+      const terms = value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+      let visible = 0;
+      cards.forEach(card => {
+        const matches = terms.length === 0 || terms.some(term => card.dataset.search.includes(term));
+        card.hidden = !matches;
+        if (matches) visible += 1;
+      });
+      noResults.style.display = visible ? 'none' : 'block';
+      resultCount.textContent = terms.length ? `${visible} reflection${visible === 1 ? '' : 's'} found.` : `Showing all ${cards.length} reflections.`;
+    }
+
+    searchInput.addEventListener('input', event => filterWisdom(event.target.value));
+    document.querySelectorAll('.topic-button').forEach(button => {
+      button.addEventListener('click', () => {
+        searchInput.value = button.dataset.topic;
+        filterWisdom(button.dataset.topic);
+        searchInput.focus();
+      });
+    });
+    filterWisdom('');
+  </script>
 </body>
 </html>
