@@ -25,6 +25,7 @@ a { color:var(--deep-sage); font-weight:700; }
 .in-short p { margin:0; }
 .ask-letter { background:#fdf3ee; border:1px dashed rgba(183,123,99,.55); border-radius:18px; padding:18px 22px; margin:0 0 22px; }
 .ask-letter p { font-family:Georgia,'Times New Roman',serif; font-style:italic; color:#4b4440; }
+.ask-letter .ask-sign { font-style:normal; font-weight:700; color:var(--clay); margin:4px 0 0; }
 .ask-letter .ask-label, .ask-tag { font:700 12px/1.5 Arial,sans-serif; font-style:normal; text-transform:uppercase; letter-spacing:.12em; color:var(--clay); margin:0 0 6px; }
 .ask-replies { font-family:Georgia,'Times New Roman',serif !important; font-size:22px !important; color:var(--deep-sage) !important; margin:8px 0 0; }
 .ask-disclaimer { font-size:14px !important; color:#6a776f !important; border-top:1px solid rgba(110,147,133,.25); padding-top:14px; margin-top:24px; }
