@@ -39,4 +39,19 @@ a { color:var(--deep-sage); font-weight:700; }
 .no-results { display:none; text-align:center; padding:28px 10px; }
 .ask-form-card { background:#fffaf4; }
 .ask-tips li { margin-bottom:6px; }
+.xmas-promo { display:grid; grid-template-columns: 240px 1fr; gap:28px; align-items:center; background:#fffaf3; border:2px solid #7a2238; border-radius:28px; padding:26px; margin:0 0 22px; box-shadow:0 16px 50px rgba(122,34,56,.16); }
+.hero.article + .xmas-promo { max-width:760px; margin-left:auto; margin-right:auto; grid-template-columns:200px 1fr; }
+.xmas-promo img { width:100%; height:auto; border-radius:16px; box-shadow:0 10px 26px rgba(0,0,0,.18); }
+.xmas-kicker { font:700 13px/1.4 Arial,sans-serif; letter-spacing:.14em; text-transform:uppercase; color:#7a2238 !important; margin:0 0 8px; }
+.xmas-promo h2 { color:#7a2238; font-size:clamp(26px,3.6vw,36px); line-height:1.15; margin:0 0 12px; }
+.xmas-lead { font-size:18px !important; margin:0 0 10px; color:#3f3a36 !important; }
+.xmas-promo ul { margin:0 0 16px; padding-left:20px; }
+.xmas-promo li { margin-bottom:4px; color:#3f3a36; }
+.xmas-promo li::marker { content:"✦  "; color:#b8862f; }
+.xmas-buttons { display:flex; flex-wrap:wrap; gap:12px; }
+.xmas-btn { display:inline-block; background:#7a2238; color:#fff !important; padding:15px 22px; border-radius:999px; text-decoration:none; font:700 17px Arial,sans-serif; box-shadow:0 8px 20px rgba(122,34,56,.28); }
+.xmas-btn:hover { filter:brightness(1.1); }
+.xmas-btn-alt { background:#46665b; box-shadow:0 8px 20px rgba(70,102,91,.25); }
+.xmas-note { font-size:14px !important; color:#6a776f !important; margin:12px 0 0; }
+@media (max-width:760px){ .xmas-promo{grid-template-columns:1fr; padding:20px} .xmas-promo img{max-width:220px; margin:0 auto} .xmas-btn{width:100%; text-align:center} }
 @media (max-width:760px){ .wrap{padding:12px}.hero,.card{padding:22px;border-radius:22px} }
