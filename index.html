@@ -178,6 +178,11 @@
       box-shadow: none;
     }
     .hero-choices .joy-btn:hover { background: rgba(110,147,133,.10); }
+    .hero-choices .ask-btn { background: linear-gradient(135deg, #c98b72, #b77b63); box-shadow: 0 10px 24px rgba(183,123,99,.3); }
+    .ask-feature { border-top: 5px solid #b77b63; }
+    .ask-feature .ask-actions { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:8px; }
+    .ask-feature .ask-actions .button-link { margin-top:0; }
+    .ask-feature .ask-actions .ask-send { background:#b77b63; }
     .hero .top-hero-note { margin-top: 10px; text-align: left; }
 
     .sage-card {
@@ -904,11 +909,12 @@
         <p class="eyebrow">A gentle place to begin</p>
         <h1>Would you like a little more calm—or a little more joy?</h1>
         <p class="subtitle">The Dancing Sage offers gentle guidance to help you slow down, reconnect with yourself, and bring more lightness into your day.</p>
-        <div class="hero-choices" aria-label="Choose calm or joy">
+        <div class="hero-choices" aria-label="Choose calm, joy or advice">
           <a href="#calm-reset" class="top-hero-btn hero-cta">Help Me Find Calm</a>
           <a href="#joy-discovery" class="top-hero-btn hero-cta joy-btn">Help Me Find Joy</a>
+          <a href="ask.html" class="top-hero-btn hero-cta ask-btn">Ask the Sage a Question</a>
         </div>
-        <p class="top-hero-note">Both experiences are free. No sign-up is needed to begin.</p>
+        <p class="top-hero-note">All free. No sign-up is needed to begin.</p>
       </div>
       <div class="sage-card" role="img" aria-label="The Dancing Sage walking barefoot along the shore at golden hour, her shawl flowing in the wind">
         <div class="sage-bubble"><strong>The Dancing Sage is ready when you are.</strong><br>You do not need to have the right words. Simply choose what your heart is asking for today.</div>
@@ -924,6 +930,36 @@
       <p><strong>Choose your copy:</strong> get the illustrated PDF guide and Excel Christmas planner together on Etsy, or shop the book on Amazon.</p>
       <div class="christmas-shop-links"><a class="button-link" href="https://www.etsy.com/ca/listing/4589222814/christmas-planner-bundle-with-recipes" target="_blank" rel="noopener noreferrer">Get the Digital Bundle on Etsy</a><a class="button-link" href="https://a.co/d/01omYf9Q" target="_blank" rel="noopener noreferrer">Shop the Book on Amazon</a></div>
       <p class="note">The Etsy bundle is a digital download — no physical book is shipped. Already have the book? <a href="calm-christmas-planner.html">Find your companion planner here.</a></p>
+    </section>
+
+    <section class="card wisdom-feature ask-feature" id="ask-the-sage">
+      <p class="eyebrow">Dear Sage…</p>
+      <h2 class="section-title">Ask The Dancing Sage</h2>
+      <p class="intro-text">Warm, practical and occasionally cheeky advice on family, friendship, manners, baking and life after 45.</p>
+      <div class="wisdom-grid">
+        <a class="wisdom-tile" href="dear-sage-kids-grown-who-am-i-now.html">
+          <div class="wisdom-tile-icon" aria-hidden="true"><span>🌷</span></div>
+          <h3>My Children Are Grown. Who Am I Now?</h3>
+          <p>You spent decades being needed. Now the house is quiet, and you're not sure who you are without the busy.</p>
+          <span class="small-link">Read the Sage's answer →</span>
+        </a>
+        <a class="wisdom-tile" href="dear-sage-passing-the-holiday-torch.html">
+          <div class="wisdom-tile-icon" aria-hidden="true"><span>🎄</span></div>
+          <h3>How Do I Stop Hosting Every Holiday Without Hurting Anyone?</h3>
+          <p>You've hosted every Christmas for 25 years. Here's how to pass the torch kindly, and actually enjoy it.</p>
+          <span class="small-link">Read the Sage's answer →</span>
+        </a>
+        <a class="wisdom-tile" href="dear-sage-husband-retired-home-all-day.html">
+          <div class="wisdom-tile-icon" aria-hidden="true"><span>☕</span></div>
+          <h3>My Husband Retired and Is Home All Day. How Do I Get My Space Back?</h3>
+          <p>You love him, truly. But he's always there, and he's started reorganizing your kitchen.</p>
+          <span class="small-link">Read the Sage's answer →</span>
+        </a>
+      </div>
+      <div class="ask-actions">
+        <a class="button-link ask-send" href="https://tally.so/r/obrgjV" target="_blank" rel="noopener noreferrer">Send the Sage your question →</a>
+        <a class="button-link" href="ask.html">Read all the answers →</a>
+      </div>
     </section>
 
     <div class="sage-portrait-banner">
@@ -1147,32 +1183,6 @@
       <a class="button-link wisdom-more" href="wisdom.html">Visit the Wisdom Library →</a>
     </section>
 
-    <section class="card wisdom-feature" id="ask-the-sage">
-      <p class="eyebrow">Dear Sage…</p>
-      <h2 class="section-title">Ask The Dancing Sage</h2>
-      <p class="intro-text">Warm, practical and occasionally cheeky advice on family, friendship, manners, baking and life after 45.</p>
-      <div class="wisdom-grid">
-        <a class="wisdom-tile" href="dear-sage-kids-grown-who-am-i-now.html">
-          <div class="wisdom-tile-icon" aria-hidden="true"><span>🌷</span></div>
-          <h3>My Children Are Grown. Who Am I Now?</h3>
-          <p>You spent decades being needed. Now the house is quiet, and you're not sure who you are without the busy.</p>
-          <span class="small-link">Read the Sage's answer →</span>
-        </a>
-        <a class="wisdom-tile" href="dear-sage-passing-the-holiday-torch.html">
-          <div class="wisdom-tile-icon" aria-hidden="true"><span>🎄</span></div>
-          <h3>How Do I Stop Hosting Every Holiday Without Hurting Anyone?</h3>
-          <p>You've hosted every Christmas for 25 years. Here's how to pass the torch kindly, and actually enjoy it.</p>
-          <span class="small-link">Read the Sage's answer →</span>
-        </a>
-        <a class="wisdom-tile" href="dear-sage-husband-retired-home-all-day.html">
-          <div class="wisdom-tile-icon" aria-hidden="true"><span>☕</span></div>
-          <h3>My Husband Retired and Is Home All Day. How Do I Get My Space Back?</h3>
-          <p>You love him, truly. But he's always there, and he's started reorganizing your kitchen.</p>
-          <span class="small-link">Read the Sage's answer →</span>
-        </a>
-      </div>
-      <a class="button-link wisdom-more" href="ask.html">Read all answers, or ask your own →</a>
-    </section>
 
     <section class="card" id="guides">
       <h2 class="section-title">Walk a Little Further</h2>
