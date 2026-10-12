@@ -1,1 +1,0 @@
-Added wisdom.html, body-remembers.html, homepage Wisdom Library link, and updated sitemap.xml. Upload/replace these files in GitHub Pages.
