@@ -51,6 +51,9 @@ a { color:var(--deep-sage); font-weight:700; }
 .xmas-promo li::marker { content:"✦  "; color:#b8862f; }
 .xmas-buttons { display:flex; flex-wrap:wrap; gap:10px; }
 .xmas-btn { display:inline-block; background:#7a2238; color:#fff !important; padding:11px 18px; border-radius:999px; text-decoration:none; font:700 15px Arial,sans-serif; box-shadow:0 6px 14px rgba(122,34,56,.25); }
+.joys-promo { border-color:#46665b; box-shadow:0 10px 30px rgba(70,102,91,.14); }
+.joys-promo h2, .joys-promo .xmas-kicker { color:#46665b !important; }
+.joys-promo .xmas-btn { background:#46665b; box-shadow:0 6px 14px rgba(70,102,91,.25); }
 .xmas-btn:hover { filter:brightness(1.1); }
 .xmas-btn-alt { background:#46665b; box-shadow:0 6px 14px rgba(70,102,91,.22); }
 .xmas-note { font-size:13px !important; line-height:1.5 !important; color:#6a776f !important; margin:8px 0 0; }
