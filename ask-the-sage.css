@@ -54,6 +54,9 @@ a { color:var(--deep-sage); font-weight:700; }
 .joys-promo { border-color:#46665b; box-shadow:0 10px 30px rgba(70,102,91,.14); }
 .joys-promo h2, .joys-promo .xmas-kicker { color:#46665b !important; }
 .joys-promo .xmas-btn { background:#46665b; box-shadow:0 6px 14px rgba(70,102,91,.25); }
+.kids-promo { border-color:#2e9bb5; background:#f4fbfd; box-shadow:0 10px 30px rgba(46,155,181,.15); }
+.kids-promo h2, .kids-promo .xmas-kicker { color:#7a3fa0 !important; }
+.kids-promo .xmas-btn { background:#e07a1f; box-shadow:0 6px 14px rgba(224,122,31,.3); }
 .xmas-btn:hover { filter:brightness(1.1); }
 .xmas-btn-alt { background:#46665b; box-shadow:0 6px 14px rgba(70,102,91,.22); }
 .xmas-note { font-size:13px !important; line-height:1.5 !important; color:#6a776f !important; margin:8px 0 0; }
