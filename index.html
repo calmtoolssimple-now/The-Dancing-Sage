@@ -891,6 +891,24 @@
     .christmas-feature .section-title { color: #7a2238; }
     .christmas-shop-links { display: flex; flex-wrap: wrap; gap: 12px; }
     .christmas-feature .button-link { max-width: 100%; white-space: normal; text-align: center; }
+
+    .tool-fold > summary { list-style:none; cursor:pointer; display:block; width:max-content; max-width:100%; margin:16px auto 4px; padding:14px 28px; border-radius:999px; background:linear-gradient(135deg, var(--sage), var(--deep-sage)); color:#fff; font:700 16px Arial,sans-serif; box-shadow:0 10px 24px rgba(70,102,91,.25); }
+    .tool-fold > summary::-webkit-details-marker { display:none; }
+    .tool-fold[open] > summary { display:none; }
+    /* Simplified homepage additions */
+    .hero-gift { display:inline-block; margin-top:14px; padding:10px 16px; border-radius:999px; background:#fff7ed; border:1px solid rgba(199,167,108,.55); color:#6d5840; font:15px Arial,sans-serif; text-decoration:none; }
+    .hero-gift:hover { background:#fdeedd; }
+    .xmas-grid { display:grid; grid-template-columns: 220px 1fr; gap:28px; align-items:center; }
+    .xmas-cover img { width:100%; height:auto; border-radius:14px; box-shadow:0 12px 28px rgba(122,34,56,.22); display:block; }
+    .xmas-copy .section-title, .xmas-copy .eyebrow, .xmas-copy .intro-text { text-align:left; }
+    .free-gifts { border-top:5px solid var(--gold); }
+    .gift-pair { display:grid; grid-template-columns: 1.15fr 1fr; gap:18px; margin-top:16px; }
+    .gift-card { background:#fffaf4; border:1px solid rgba(110,147,133,.22); border-radius:20px; padding:22px; }
+    .gift-card.gift-main { background:#f3f7f4; border:2px solid var(--sage); }
+    .gift-card h3 { color:var(--deep-sage); margin:10px 0 6px; font-size:24px; }
+    .gift-card .note { font-size:13px; margin-top:10px; }
+    .favourites-link { text-align:center; margin-top:18px; font-family:Arial,sans-serif; }
+    @media (max-width:760px){ .xmas-grid, .gift-pair { grid-template-columns:1fr; } .xmas-cover img { max-width:220px; margin:0 auto; } .xmas-copy .section-title, .xmas-copy .eyebrow, .xmas-copy .intro-text { text-align:center; } }
   </style>
 
   <link rel="stylesheet" href="sage-content.css">
@@ -903,8 +921,7 @@
       <a href="#joy-discovery">Find Joy</a>
       <a href="ask.html">Ask the Sage</a>
       <a href="about.html">About</a>
-      <a href="#free-journal">Free 5-Day Journal</a>
-      <a href="#free-coloring">Free Colouring Pages</a>
+      <a href="#free-gifts">Free Gifts</a>
       <a href="wisdom.html">Wisdom Library</a>
       <a href="#christmas-book">Christmas Book</a>
       <a href="#guides">Books & Guides</a>
@@ -922,6 +939,7 @@
           <a href="ask.html" class="top-hero-btn hero-cta ask-btn">Ask the Sage a Question</a>
         </div>
         <p class="top-hero-note">All free. No sign-up is needed to begin.</p>
+        <a class="hero-gift" href="https://dancingsage-tyyf2k.subscribepage.io/">🎁 <strong>Free gift:</strong> Five Gentle Days Back to You, by email →</a>
       </div>
       <div class="sage-card" role="img" aria-label="The Dancing Sage walking barefoot along the shore at golden hour, her shawl flowing in the wind">
         <div class="sage-bubble"><strong>The Dancing Sage is ready when you are.</strong><br>You do not need to have the right words. Simply choose what your heart is asking for today.</div>
@@ -960,6 +978,9 @@
     </section>
 
     <section class="card christmas-feature" id="christmas-book" aria-labelledby="christmas-book-title">
+      <div class="xmas-grid">
+      <a class="xmas-cover" href="https://a.co/d/01omYf9Q" target="_blank" rel="noopener noreferrer"><img src="christmas-guide-cover.jpg" alt="A Calm &amp; Simple Christmas by The Dancing Sage: Spend Less. Do Less. Laugh More. Enjoy More." width="540" height="633" loading="lazy"></a>
+      <div class="xmas-copy">
       <p class="eyebrow">Make room for your joy this Christmas</p>
       <h2 class="section-title" id="christmas-book-title">A Calm &amp; Simple Christmas</h2>
       <p class="intro-text">For the woman who loves Christmas, but would love to enjoy it herself, too.</p>
@@ -967,70 +988,107 @@
       <p><strong>Choose your copy:</strong> get the illustrated PDF guide and Excel Christmas planner together on Etsy, or shop the book on Amazon.</p>
       <div class="christmas-shop-links"><a class="button-link" href="https://www.etsy.com/ca/listing/4589222814/christmas-planner-bundle-with-recipes" target="_blank" rel="noopener noreferrer">Get the Digital Bundle on Etsy</a><a class="button-link" href="https://a.co/d/01omYf9Q" target="_blank" rel="noopener noreferrer">Shop the Book on Amazon</a></div>
       <p class="note">The Etsy bundle is a digital download — no physical book is shipped. Already have the book? <a href="calm-christmas-planner.html">Find your companion planner here.</a></p>
+      </div>
+      </div>
     </section>
 
-
-
-    <section class="sage-practice sage-guides" aria-labelledby="practical-guides-heading"><p class="sage-kicker">Something you can try today</p><h2 id="practical-guides-heading">Colour, sip and spend a little time together</h2><p>Two complete guides to help you begin with supplies you already have. Read them here, with no purchase or sign-up.</p><div class="sage-guide-grid"><div><h3><a href="colouring-for-beginners.html">Colouring for Beginners</a></h3><p>Choose a page, try three colours and enjoy a first fifteen-minute session.</p></div><div><h3><a href="colouring-and-tea-with-friends.html">Colouring &amp; Tea with Friends</a></h3><p>An easy invitation, a one-hour plan and conversation starters for a small gathering.</p></div></div></section>
-    <section class="card path-intro" id="joy-discovery">
-      <p class="eyebrow">Your joy discovery</p>
-      <h2 class="section-title">Let’s find what brings you back to life</h2>
-      <p class="intro-text">Joy looks different for everyone. Choose what feels true for you, and The Dancing Sage will create a gentle seven-day Joy Plan that fits your life.</p>
-
-      <div class="joy-quiz" id="joyQuiz">
-        <fieldset class="joy-question">
-          <legend>Which kinds of joy are calling to you?</legend>
-          <p class="joy-hint">Choose up to three.</p>
-          <div class="joy-options" id="joySources">
-            <label class="joy-option"><input type="checkbox" value="quiet"><span>☕ Quiet comforts</span></label>
-            <label class="joy-option"><input type="checkbox" value="nature"><span>🌿 Nature & fresh air</span></label>
-            <label class="joy-option"><input type="checkbox" value="creative"><span>🎨 Making & creating</span></label>
-            <label class="joy-option"><input type="checkbox" value="movement"><span>🎵 Music & movement</span></label>
-            <label class="joy-option"><input type="checkbox" value="connection"><span>💛 People & connection</span></label>
-            <label class="joy-option"><input type="checkbox" value="play"><span>✨ Playfulness & fun</span></label>
-            <label class="joy-option"><input type="checkbox" value="treats"><span>🍫 Favourite treats</span></label>
-            <label class="joy-option"><input type="checkbox" value="discovery"><span>📖 Learning & discovery</span></label>
-          </div>
-        </fieldset>
-
-        <fieldset class="joy-question">
-          <legend>What most often gets in the way?</legend>
-          <div class="joy-options">
-            <label class="joy-option"><input type="radio" name="joyBarrier" value="time"><span>Not enough time</span></label>
-            <label class="joy-option"><input type="radio" name="joyBarrier" value="energy"><span>Low energy</span></label>
-            <label class="joy-option"><input type="radio" name="joyBarrier" value="guilt"><span>I put others first</span></label>
-            <label class="joy-option"><input type="radio" name="joyBarrier" value="ideas"><span>I’m not sure what I enjoy</span></label>
-            <label class="joy-option"><input type="radio" name="joyBarrier" value="stress"><span>Stress crowds it out</span></label>
-          </div>
-        </fieldset>
-
-        <fieldset class="joy-question">
-          <legend>How much time feels realistic on most days?</legend>
-          <div class="joy-options">
-            <label class="joy-option"><input type="radio" name="joyTime" value="5"><span>5 minutes</span></label>
-            <label class="joy-option"><input type="radio" name="joyTime" value="15"><span>15 minutes</span></label>
-            <label class="joy-option"><input type="radio" name="joyTime" value="30"><span>30 minutes</span></label>
-          </div>
-        </fieldset>
-
-        <button type="button" class="joy-generate" onclick="generateJoyPlan()">Create My Seven-Day Joy Plan</button>
-        <p class="note" id="joyMessage" role="status" aria-live="polite"></p>
-
-        <div class="result joy-result" id="joyResult" aria-live="polite">
-          <h3 class="sage-response-title">A little more joy, made for you</h3>
-          <p class="joy-result-intro" id="joyIntro"></p>
-          <div class="joy-days" id="joyDays"></div>
-          <div class="joy-actions">
-            <button type="button" onclick="printJoyPlan()">Print My Plan</button>
-            <button type="button" onclick="generateJoyPlan()">Give Me Another Plan</button>
-          </div>
+    <section class="card free-gifts" id="free-gifts" aria-labelledby="free-gifts-title">
+      <p class="eyebrow">Free gifts from The Dancing Sage</p>
+      <h2 class="section-title" id="free-gifts-title">Start with something lovely, on the house</h2>
+      <div class="gift-pair">
+        <div class="gift-card gift-main" id="free-journal">
+          <span class="gift-badge">Free by email</span>
+          <h3>Five Gentle Days Back to You</h3>
+          <p>Five days of gentle reflections and simple practices to help you slow down, reconnect with yourself and create small moments of calm, delivered to your inbox.</p>
+          <a class="button-link" href="https://dancingsage-tyyf2k.subscribepage.io/">Send Me the Free 5-Day Journey →</a>
+          <p class="note">Free. Unsubscribe any time.</p>
+        </div>
+        <div class="gift-card" id="free-coloring">
+          <span class="gift-badge">Free printable</span>
+          <h3>Five Quiet Moments</h3>
+          <p>Five large, relaxing colouring pages from <em>Simple Joys</em> to print at home and colour however feels good.</p>
+          <a class="button-link" href="https://calmtools7.gumroad.com/l/FiveQuietMoments" target="_blank" rel="noopener noreferrer">Get the Free Colouring Pages →</a>
+          <p class="note">Enter $0 at checkout. For personal use.</p>
         </div>
       </div>
     </section>
 
+    <section class="card" id="guides">
+      <h2 class="section-title">Walk a Little Further</h2>
+      <p class="intro-text">When you are ready, explore books, guided journals, and gentle resources that can walk beside you beyond today's reset.</p><p class="sage-disclosure">These are optional purchases. Some product links are affiliate links and may earn Calm &amp; Simple a commission at no extra cost to you.</p>
+      <div class="resource-grid">
+        <div class="book-card featured-guide">
+          <img class="book-cover" src="dancing_sage_journal_cover.JPG" alt="30 Days Back to You — a daily journal for women rediscovering their joy, by The Dancing Sage" loading="lazy">
+          <h3>30 Days Back to You — Now on Amazon</h3>
+          <p>A gentle 8.5x11 paperback journal for slowing down, reconnecting, and finding your way back to yourself, one small day at a time.</p>
+          <p><a class="button-link" href="https://a.co/d/0h7Ia7tH" target="_blank" rel="noopener noreferrer">Get the Paperback on Amazon</a></p>
+        </div>
+        <div class="book-card">
+          <img class="book-cover" src="Walkinyourrhtymsquaretitlepage.jpeg" alt="Walk in Your Own Rhythm with The Dancing Sage — a woman's guide to energy, movement, and living life on your own terms" loading="lazy">
+          <h3>Walk in Your Own Rhythm</h3>
+          <p>A woman's guide to energy, movement, and living life on your own terms. Now available on Kindle.</p>
+          <p><a class="button-link" href="https://a.co/d/0aro3kwS" target="_blank" rel="noopener noreferrer">Get it on Kindle</a></p>
+        </div>
+        <div class="book-card">
+          <img class="book-cover" src="dancing-your-way-to-freedom-cover.jpg" alt="Dancing Your Way to Freedom with The Dancing Sage — a gentle guide to movement, calm, intuition and everyday freedom" loading="lazy">
+          <h3>Dancing Your Way to Freedom</h3>
+          <p>Now available on Kindle — a gentle read for calm, reflection, and coming home to yourself.</p>
+          <p><a class="button-link" href="https://a.co/d/00v1qej9" target="_blank" rel="noopener noreferrer">Get it on Kindle</a></p>
+        </div>
+        <div class="book-card featured-guide">
+          <img class="book-cover" src="seasons-of-change-cover.jpg" alt="The Dancing Sage: Seasons of Change — a cottage-themed adult colouring book for calm, creativity and simple joy" loading="lazy">
+          <h3>The Dancing Sage: Seasons of Change — Adult Coloring Book</h3>
+          <p>Cottagecore colouring illustrations inspired by nature, home, and heart. A gentle, meditative way to slow down and create.</p>
+          <p><a class="button-link" href="https://a.co/d/0b9Xrc5z" target="_blank" rel="noopener noreferrer">Get the Coloring Book on Amazon</a></p>
+        </div>
+        <div class="book-card featured-guide">
+          <img class="book-cover" src="simple-joys-cover.jpg" alt="The Dancing Sage: Simple Joys — adult colouring book cover, a woman relaxing on a porch by the sea" loading="lazy">
+          <h3>The Dancing Sage: Simple Joys — Adult Colouring Book</h3>
+          <p>40 large, relaxing illustrations designed for comfort, calm, and quiet moments.</p>
+          <p><a class="button-link" href="https://www.amazon.ca/dp/B0HH89DJCY" target="_blank" rel="noopener noreferrer">Get the Colouring Book on Amazon.ca</a></p>
+        </div>
+        <div class="book-card">
+          <img class="book-cover" src="coloring-fun-magic-monsters-machines-cover.jpg" alt="Coloring Fun with Magic, Monsters &amp; Machines: 100 big and easy pictures for kids ages 2 to 10" loading="lazy">
+          <h3>Coloring Fun with Magic, Monsters &amp; Machines</h3>
+          <p>100 big and easy pictures of dragons, fairies, pirate fish and flying buses, for little artists ages 2 to 10. A lovely gift for the grandchildren.</p>
+          <p><a class="button-link" href="https://a.co/d/02Cmdg6I" target="_blank" rel="noopener noreferrer">Get it on Amazon</a></p>
+        </div>
+      </div>
+      <p class="favourites-link"><a href="favourites.html">See the Sage's favourite little comforts →</a></p>
+    </section>
+
+    <section class="card wisdom-feature">
+      <h2 class="section-title">From The Dancing Sage's Wisdom Library</h2>
+      <p class="intro-text">Gentle reflections for the days when you want to slow down, breathe, and come back to yourself.</p>
+      <div class="wisdom-grid">
+        <a class="wisdom-tile" href="body-remembers.html">
+          <div class="wisdom-tile-icon" aria-hidden="true"><span>🌿</span></div>
+          <h3>Sometimes the Body Remembers What the Mind Has Forgotten</h3>
+          <p>How nature, breath, and simple noticing can help us remember peace.</p>
+          <span class="small-link">Read Reflection →</span>
+        </a>
+        <a class="wisdom-tile" href="coming-home-to-yourself.html">
+          <img src="sage-reading-under-the-apple-tree-clean.jpg" alt="The Dancing Sage resting beneath an apple tree with a book and a cup of tea" loading="lazy">
+          <h3>Coming Home to Yourself</h3>
+          <p>A quiet reminder that you do not have to go anywhere to begin returning to yourself.</p>
+          <span class="small-link">Read Reflection →</span>
+        </a>
+        <a class="wisdom-tile" href="the-wisdom-of-slow-mornings.html">
+          <img src="sage-choosing-one-pearl-earring-clean.jpg" class="pos-face-high" alt="The Dancing Sage getting ready slowly by a sunlit window" loading="lazy">
+          <h3>The Wisdom of Slow Mornings</h3>
+          <p>On letting the first hour of the day be gentle, unhurried, and yours.</p>
+          <span class="small-link">Read Reflection →</span>
+        </a>
+      </div>
+      <a class="button-link wisdom-more" href="wisdom.html">Visit the Wisdom Library →</a>
+    </section>
+
+    <section class="sage-practice sage-guides" aria-labelledby="practical-guides-heading"><p class="sage-kicker">Something you can try today</p><h2 id="practical-guides-heading">Colour, sip and spend a little time together</h2><p>Two complete guides to help you begin with supplies you already have. Read them here, with no purchase or sign-up.</p><div class="sage-guide-grid"><div><h3><a href="colouring-for-beginners.html">Colouring for Beginners</a></h3><p>Choose a page, try three colours and enjoy a first fifteen-minute session.</p></div><div><h3><a href="colouring-and-tea-with-friends.html">Colouring &amp; Tea with Friends</a></h3><p>An easy invitation, a one-hour plan and conversation starters for a small gathering.</p></div></div></section>
+
     <section class="card" id="calm-reset">
       <h2 class="section-title">What would you like help carrying today?</h2>
       <p class="intro-text">This is not about fixing your whole life. It is about finding one gentle pause, one breath, one small practice, or one kind thought for right now.</p>
+      <details class="tool-fold" id="calm-fold"><summary>Start my calm reset →</summary>
 
       <div class="quick-block">
         <span class="quick-label">How does it feel in your body?</span>
@@ -1140,117 +1198,65 @@
       <div id="emailSection">
         <p><a class="sage-button" href="https://dancingsage-tyyf2k.subscribepage.io/">Get the optional free five-day gift →</a></p><p class="note">Your reset is shown above. The email gift is separate and does not send a copy of this personalised result.</p>
       </div>
+      </details>
     </section>
 
-    <section class="card free-gift" id="free-journal">
-      <div class="gift-inner">
-        <span class="gift-badge">A free gift</span>
-        <h2>Five Gentle Days Back to You</h2>
-        <p>Five days of gentle reflections and simple practices to help you slow down, reconnect with yourself, and begin creating small moments of calm.</p>
-        <a class="button-link" href="https://dancingsage-tyyf2k.subscribepage.io/">Begin Your Free 5-Day Journey →</a>
-        <p class="note">Opens our MailerLite sign-up page. The free email gift is separate from the paperback journal <em>30 Days Back to You</em>.</p>
-      </div>
-    </section>
+    <section class="card path-intro" id="joy-discovery">
+      <p class="eyebrow">Your joy discovery</p>
+      <h2 class="section-title">Let’s find what brings you back to life</h2>
+      <p class="intro-text">Joy looks different for everyone. Choose what feels true for you, and The Dancing Sage will create a gentle seven-day Joy Plan that fits your life.</p>
+      <details class="tool-fold" id="joy-fold"><summary>Create my seven-day Joy Plan →</summary>
 
-    <section class="card free-gift" id="free-coloring">
-      <div class="gift-inner">
-        <span class="gift-badge">A free gift</span>
-        <h2>Five Quiet Moments</h2>
-        <p>A free printable sampler from The Dancing Sage: Simple Joys — five large, relaxing colouring pages to try before you commit, created for a calm, comfortable colouring experience without overly tiny or complicated details. Print them at home and colour in whatever way feels good to you.</p>
-        <a class="button-link" href="https://calmtools7.gumroad.com/l/FiveQuietMoments" target="_blank" rel="noopener noreferrer">Get Your Free Sampler →</a>
-        <p class="note">A free printable PDF sampler — enter $0 at checkout. Includes a link to the full Simple Joys book on Amazon. For personal use only.</p>
-      </div>
-    </section>
+      <div class="joy-quiz" id="joyQuiz">
+        <fieldset class="joy-question">
+          <legend>Which kinds of joy are calling to you?</legend>
+          <p class="joy-hint">Choose up to three.</p>
+          <div class="joy-options" id="joySources">
+            <label class="joy-option"><input type="checkbox" value="quiet"><span>☕ Quiet comforts</span></label>
+            <label class="joy-option"><input type="checkbox" value="nature"><span>🌿 Nature & fresh air</span></label>
+            <label class="joy-option"><input type="checkbox" value="creative"><span>🎨 Making & creating</span></label>
+            <label class="joy-option"><input type="checkbox" value="movement"><span>🎵 Music & movement</span></label>
+            <label class="joy-option"><input type="checkbox" value="connection"><span>💛 People & connection</span></label>
+            <label class="joy-option"><input type="checkbox" value="play"><span>✨ Playfulness & fun</span></label>
+            <label class="joy-option"><input type="checkbox" value="treats"><span>🍫 Favourite treats</span></label>
+            <label class="joy-option"><input type="checkbox" value="discovery"><span>📖 Learning & discovery</span></label>
+          </div>
+        </fieldset>
 
-    <section class="card wisdom-feature">
-      <h2 class="section-title">From The Dancing Sage's Wisdom Library</h2>
-      <p class="intro-text">Gentle reflections for the days when you want to slow down, breathe, and come back to yourself.</p>
-      <div class="wisdom-grid">
-        <a class="wisdom-tile" href="body-remembers.html">
-          <div class="wisdom-tile-icon" aria-hidden="true"><span>🌿</span></div>
-          <h3>Sometimes the Body Remembers What the Mind Has Forgotten</h3>
-          <p>How nature, breath, and simple noticing can help us remember peace.</p>
-          <span class="small-link">Read Reflection →</span>
-        </a>
-        <a class="wisdom-tile" href="coming-home-to-yourself.html">
-          <img src="sage-reading-under-the-apple-tree-clean.jpg" alt="The Dancing Sage resting beneath an apple tree with a book and a cup of tea" loading="lazy">
-          <h3>Coming Home to Yourself</h3>
-          <p>A quiet reminder that you do not have to go anywhere to begin returning to yourself.</p>
-          <span class="small-link">Read Reflection →</span>
-        </a>
-        <a class="wisdom-tile" href="the-wisdom-of-slow-mornings.html">
-          <img src="sage-choosing-one-pearl-earring-clean.jpg" class="pos-face-high" alt="The Dancing Sage getting ready slowly by a sunlit window" loading="lazy">
-          <h3>The Wisdom of Slow Mornings</h3>
-          <p>On letting the first hour of the day be gentle, unhurried, and yours.</p>
-          <span class="small-link">Read Reflection →</span>
-        </a>
-      </div>
-      <a class="button-link wisdom-more" href="wisdom.html">Visit the Wisdom Library →</a>
-    </section>
+        <fieldset class="joy-question">
+          <legend>What most often gets in the way?</legend>
+          <div class="joy-options">
+            <label class="joy-option"><input type="radio" name="joyBarrier" value="time"><span>Not enough time</span></label>
+            <label class="joy-option"><input type="radio" name="joyBarrier" value="energy"><span>Low energy</span></label>
+            <label class="joy-option"><input type="radio" name="joyBarrier" value="guilt"><span>I put others first</span></label>
+            <label class="joy-option"><input type="radio" name="joyBarrier" value="ideas"><span>I’m not sure what I enjoy</span></label>
+            <label class="joy-option"><input type="radio" name="joyBarrier" value="stress"><span>Stress crowds it out</span></label>
+          </div>
+        </fieldset>
 
+        <fieldset class="joy-question">
+          <legend>How much time feels realistic on most days?</legend>
+          <div class="joy-options">
+            <label class="joy-option"><input type="radio" name="joyTime" value="5"><span>5 minutes</span></label>
+            <label class="joy-option"><input type="radio" name="joyTime" value="15"><span>15 minutes</span></label>
+            <label class="joy-option"><input type="radio" name="joyTime" value="30"><span>30 minutes</span></label>
+          </div>
+        </fieldset>
 
-    <section class="card" id="guides">
-      <h2 class="section-title">Walk a Little Further</h2>
-      <p class="intro-text">When you are ready, explore books, guided journals, and gentle resources that can walk beside you beyond today's reset.</p><p class="sage-disclosure">These are optional purchases. Some product links are affiliate links and may earn Calm &amp; Simple a commission at no extra cost to you.</p>
-      <div class="resource-grid">
-        <div class="book-card featured-guide">
-          <img class="book-cover" src="dancing_sage_journal_cover.JPG" alt="30 Days Back to You — a daily journal for women rediscovering their joy, by The Dancing Sage" loading="lazy">
-          <h3>30 Days Back to You — Now on Amazon</h3>
-          <p>A gentle 8.5x11 paperback journal for slowing down, reconnecting, and finding your way back to yourself, one small day at a time.</p>
-          <p><a class="button-link" href="https://a.co/d/0h7Ia7tH" target="_blank" rel="noopener noreferrer">Get the Paperback on Amazon</a></p>
-        </div>
-        <div class="book-card">
-          <img class="book-cover" src="Walkinyourrhtymsquaretitlepage.jpeg" alt="Walk in Your Own Rhythm with The Dancing Sage — a woman's guide to energy, movement, and living life on your own terms" loading="lazy">
-          <h3>Walk in Your Own Rhythm</h3>
-          <p>A woman's guide to energy, movement, and living life on your own terms. Now available on Kindle.</p>
-          <p><a class="button-link" href="https://a.co/d/0aro3kwS" target="_blank" rel="noopener noreferrer">Get it on Kindle</a></p>
-        </div>
-        <div class="book-card">
-          <img class="book-cover" src="dancing-your-way-to-freedom-cover.jpg" alt="Dancing Your Way to Freedom with The Dancing Sage — a gentle guide to movement, calm, intuition and everyday freedom" loading="lazy">
-          <h3>Dancing Your Way to Freedom</h3>
-          <p>Now available on Kindle — a gentle read for calm, reflection, and coming home to yourself.</p>
-          <p><a class="button-link" href="https://a.co/d/00v1qej9" target="_blank" rel="noopener noreferrer">Get it on Kindle</a></p>
-        </div>
-        <div class="book-card featured-guide">
-          <img class="book-cover" src="seasons-of-change-cover.jpg" alt="The Dancing Sage: Seasons of Change — a cottage-themed adult colouring book for calm, creativity and simple joy" loading="lazy">
-          <h3>The Dancing Sage: Seasons of Change — Adult Coloring Book</h3>
-          <p>Cottagecore colouring illustrations inspired by nature, home, and heart. A gentle, meditative way to slow down and create.</p>
-          <p><a class="button-link" href="https://a.co/d/0b9Xrc5z" target="_blank" rel="noopener noreferrer">Get the Coloring Book on Amazon</a></p>
-        </div>
-        <div class="book-card featured-guide">
-          <img class="book-cover" src="simple-joys-cover.jpg" alt="The Dancing Sage: Simple Joys — adult colouring book cover, a woman relaxing on a porch by the sea" loading="lazy">
-          <h3>The Dancing Sage: Simple Joys — Adult Colouring Book</h3>
-          <p>40 large, relaxing illustrations designed for comfort, calm, and quiet moments.</p>
-          <p><a class="button-link" href="https://www.amazon.ca/dp/B0HH89DJCY" target="_blank" rel="noopener noreferrer">Get the Colouring Book on Amazon.ca</a></p>
-        </div>
-        <div class="product-card">
-          <h3>Helpful calming products</h3>
-          <p>🌸 <a href="https://amzn.to/3QxpJmh" target="_blank" rel="nofollow sponsored noopener">Aromatherapy Diffuser Necklace</a></p>
-          <p>💧 <a href="https://amzn.to/4vG0Kxj" target="_blank" rel="nofollow sponsored noopener">Lavender Spray</a></p>
-          <p>💛 <a href="https://amzn.to/4e2CkI9" target="_blank" rel="nofollow sponsored noopener">Touch Bracelets</a></p>
-        </div>
-        <div class="book-card span-full">
-          <h3>A Little More Comfort</h3>
-          <p>Small additions to a slower evening — for coloring, quiet sound, and warmth.</p>
-          <div class="comfort-items">
-            <div class="comfort-item">
-              <strong>Gel Pen Set, 360 Piece</strong>
-              <p>A gentle, screen-free way to unwind — 180 gel pens plus 180 refills across 7 color types, smooth bullet tip, for coloring books or your own doodles.</p>
-              <a href="https://www.amazon.com/Shuttle-Art-Duplicates-Coloring-Markers/dp/B01GLS0C2K?linkCode=ll2&tag=ctak42703-20&linkId=bf176c19999bd9cd155e122c515a0ba1&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored noopener">Find them on Amazon →</a>
-            </div>
-            <div class="comfort-item">
-              <strong>Sleep Sound Machine</strong>
-              <p>40 soothing sounds, dual-speaker, a soft built-in nightlight, and a simple timer — for evenings that ask for a little quiet.</p>
-              <a href="https://www.amazon.com/Hotmoon-Machine-Relaxing-Dual-Speaker-Sleeping/dp/B0CJC9SX72?linkCode=ll2&tag=ctak42703-20&linkId=8e65c4e85f783106c878da2a36d95cc1&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored noopener">Find it on Amazon →</a>
-            </div>
-            <div class="comfort-item">
-              <strong>Heated Faux Fur Throw</strong>
-              <p>A soft, reversible throw with six heat levels and auto-off, for the nights that call for extra warmth.</p>
-              <a href="https://www.amazon.com/Bearhug-Electric-Reversible-Over-Heat-Certification/dp/B09NRCD5WZ?linkCode=ll2&tag=ctak42703-20&linkId=89fa8392f01abfba6455fb4fd0bb5b45&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="nofollow sponsored noopener">Find it on Amazon →</a>
-            </div>
+        <button type="button" class="joy-generate" onclick="generateJoyPlan()">Create My Seven-Day Joy Plan</button>
+        <p class="note" id="joyMessage" role="status" aria-live="polite"></p>
+
+        <div class="result joy-result" id="joyResult" aria-live="polite">
+          <h3 class="sage-response-title">A little more joy, made for you</h3>
+          <p class="joy-result-intro" id="joyIntro"></p>
+          <div class="joy-days" id="joyDays"></div>
+          <div class="joy-actions">
+            <button type="button" onclick="printJoyPlan()">Print My Plan</button>
+            <button type="button" onclick="generateJoyPlan()">Give Me Another Plan</button>
           </div>
         </div>
       </div>
+      </details>
     </section>
 
     <section class="card social-card" id="connect">
@@ -1608,6 +1614,13 @@
 
         layer.appendChild(t);
       }
+    })();
+  </script>
+  <script>
+    (function(){
+      function openFor(h){ var m={'#calm-reset':'calm-fold','#joy-discovery':'joy-fold'}; var d=document.getElementById(m[h]); if(d){ d.open=true; } }
+      openFor(location.hash);
+      document.querySelectorAll('a[href="#calm-reset"], a[href="#joy-discovery"]').forEach(function(a){ a.addEventListener('click', function(){ openFor(a.getAttribute('href')); }); });
     })();
   </script>
 </body>
