@@ -909,6 +909,17 @@
     .gift-card .note { font-size:13px; margin-top:10px; }
     .favourites-link { text-align:center; margin-top:18px; font-family:Arial,sans-serif; }
     @media (max-width:760px){ .xmas-grid, .gift-pair { grid-template-columns:1fr; } .xmas-cover img { max-width:220px; margin:0 auto; } .xmas-copy .section-title, .xmas-copy .eyebrow, .xmas-copy .intro-text { text-align:center; } }
+
+    /* Calm + Joy combined */
+    .tools-card { text-align:center; }
+    .tool-pair { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:10px; }
+    .tool-pair:has(details[open]) { grid-template-columns:1fr; }
+    .tool-choice { background:#fffaf4; border:1px solid rgba(110,147,133,.22); border-radius:20px; padding:24px; scroll-margin-top:18px; text-align:left; }
+    .tool-choice#calm-reset { background:#f3f7f4; }
+    .tool-choice > .eyebrow { text-align:center; margin-bottom:6px; }
+    .tool-choice > .section-title { font-size:26px; }
+    .tool-choice > .intro-text { font-size:15px; margin-bottom:8px; }
+    @media (max-width:760px){ .tool-pair { grid-template-columns:1fr; } }
   </style>
 
   <link rel="stylesheet" href="sage-content.css">
@@ -1080,7 +1091,13 @@
 
     <section class="sage-practice sage-guides" aria-labelledby="practical-guides-heading"><p class="sage-kicker">Something you can try today</p><h2 id="practical-guides-heading">Colour, sip and spend a little time together</h2><p>Two complete guides to help you begin with supplies you already have. Read them here, with no purchase or sign-up.</p><div class="sage-guide-grid"><div><h3><a href="colouring-for-beginners.html">Colouring for Beginners</a></h3><p>Choose a page, try three colours and enjoy a first fifteen-minute session.</p></div><div><h3><a href="colouring-and-tea-with-friends.html">Colouring &amp; Tea with Friends</a></h3><p>An easy invitation, a one-hour plan and conversation starters for a small gathering.</p></div></div></section>
 
-    <section class="card" id="calm-reset">
+    <section class="card tools-card" id="calm-and-joy" aria-labelledby="tools-title">
+      <p class="eyebrow">Free, private and ready when you are</p>
+      <h2 class="section-title" id="tools-title">A little calm, or a little more joy?</h2>
+      <p class="intro-text">Pick whichever you need today. No sign-up needed.</p>
+      <div class="tool-pair">
+      <div class="tool-choice" id="calm-reset">
+      <p class="eyebrow">A little calm</p>
       <h2 class="section-title">What would you like help carrying today?</h2>
       <p class="intro-text">This is not about fixing your whole life. It is about finding one gentle pause, one breath, one small practice, or one kind thought for right now.</p>
       <details class="tool-fold" id="calm-fold"><summary>Start my calm reset →</summary>
@@ -1194,10 +1211,9 @@
         <p><a class="sage-button" href="https://dancingsage-tyyf2k.subscribepage.io/">Get the optional free five-day gift →</a></p><p class="note">Your reset is shown above. The email gift is separate and does not send a copy of this personalised result.</p>
       </div>
       </details>
-    </section>
-
-    <section class="card path-intro" id="joy-discovery">
-      <p class="eyebrow">Your joy discovery</p>
+    </div>
+      <div class="tool-choice" id="joy-discovery">
+      <p class="eyebrow">A little more joy</p>
       <h2 class="section-title">Let’s find what brings you back to life</h2>
       <p class="intro-text">Joy looks different for everyone. Choose what feels true for you, and The Dancing Sage will create a gentle seven-day Joy Plan that fits your life.</p>
       <details class="tool-fold" id="joy-fold"><summary>Create my seven-day Joy Plan →</summary>
@@ -1252,6 +1268,8 @@
         </div>
       </div>
       </details>
+    </div>
+      </div>
     </section>
 
     <section class="card social-card" id="connect">
