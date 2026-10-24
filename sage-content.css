@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap');
 /* Shared additions to existing pages; scoped to preserve their original design. */
 .sage-navigation,.sage-footer{max-width:980px;margin:20px auto;padding:18px 22px;text-align:center;font:16px/1.6 Arial,sans-serif;color:#334d42;box-sizing:border-box}
 .sage-navigation{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 22px;background:#fffaf4;border:1px solid #d6dfd6;border-radius:18px}
@@ -18,3 +19,12 @@
 a:focus-visible,button:focus-visible{outline:3px solid #46665b;outline-offset:4px}
 @media(max-width:600px){.sage-navigation{margin:12px;gap:10px 16px;padding:14px}.sage-practice{padding:18px}.sage-guide-grid{grid-template-columns:1fr;gap:8px}.sage-guide-page .card{padding:20px}.sage-footer{padding:16px}}
 @media print{.sage-navigation,.sage-footer,.twinkle-layer{display:none!important}.sage-guide-page{max-width:none}.sage-guide-page .card,.sage-guide-page .hero{box-shadow:none;border:0;padding:0;background:#fff}body.sage-print-joy .wrap>*{display:none!important}body.sage-print-joy #joy-discovery{display:block!important}body.sage-print-joy #joy-discovery>*:not(.joy-quiz){display:none!important}body.sage-print-joy .joy-quiz>*:not(#joyResult){display:none!important}body.sage-print-joy #joyResult{display:block!important}body.sage-print-joy .joy-actions{display:none!important}body.sage-print-joy .joy-day{break-inside:avoid}body.sage-print-joy{background:#fff}}
+
+/* New site menu (Oct 2026) */
+.sage-navigation{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px 24px;max-width:1120px;margin:14px auto 18px;padding:10px 26px;background:rgba(255,250,244,.96);border:1px solid #e4ddd0;border-radius:999px;box-shadow:0 8px 28px rgba(70,102,91,.10);position:sticky;top:10px;z-index:60;text-align:left;backdrop-filter:blur(6px)}
+.sage-navigation .nav-brand{font-family:'Dancing Script',Georgia,serif;font-size:30px;font-weight:700;line-height:1.1;color:#46665b;text-decoration:none;white-space:nowrap}
+.sage-navigation .nav-links{display:flex;flex-wrap:wrap;gap:2px 20px}
+.sage-navigation .nav-links a{color:#334d42;font:700 15px/1.4 Arial,sans-serif;text-decoration:none;padding:8px 0;border-bottom:2px solid transparent;white-space:nowrap}
+.sage-navigation .nav-links a:hover,.sage-navigation .nav-links a[aria-current="page"]{border-bottom-color:#b77b63;color:#b77b63}
+.sage-navigation .nav-links a.nav-xmas{color:#9c4a3a}
+@media(max-width:860px){.sage-navigation{border-radius:22px;justify-content:center;padding:10px 12px;margin:10px;top:6px}.sage-navigation .nav-brand{font-size:26px}.sage-navigation .nav-links{flex-wrap:nowrap;overflow-x:auto;max-width:100%;gap:2px 16px;justify-content:flex-start;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 4px}.sage-navigation .nav-links::-webkit-scrollbar{display:none}}

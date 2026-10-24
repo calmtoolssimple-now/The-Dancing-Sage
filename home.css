@@ -1,0 +1,144 @@
+/* The Dancing Sage homepage (Oct 2026 redesign) */
+:root{--sage:#6e9385;--deep:#46665b;--deeper:#334d42;--cream:#fbf6ee;--paper:#fffaf4;--clay:#b77b63;--clay-dark:#9c624c;--ink:#2f3a35;--muted:#5d6b64;--line:#e4ddd0;--xmas:#8e3b2f}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#fbf6ee 0%,#f7efe6 55%,#f2e7dc 100%)}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--deep)}
+.home{max-width:1120px;margin:0 auto;padding:0 22px 40px}
+.h-eyebrow{font:700 13px/1.4 Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--clay-dark);margin:0 0 10px}
+.h-title{font-family:Georgia,'Times New Roman',serif;color:var(--deeper);font-weight:400;font-size:clamp(28px,3.6vw,40px);line-height:1.15;margin:0 0 10px}
+.h-sub{color:var(--muted);font-size:17px;line-height:1.65;margin:0 0 24px;max-width:640px}
+.h-section{margin:64px 0 0}
+.h-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.h-head .h-sub{margin:0}
+.btn{display:inline-block;background:var(--clay);color:#fff;text-decoration:none;font:700 16px/1 Arial,sans-serif;padding:15px 24px;border-radius:999px;box-shadow:0 6px 18px rgba(183,123,99,.28);transition:transform .15s,background .15s}
+.btn:hover{background:var(--clay-dark);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--deeper);box-shadow:none;border:2px solid var(--deep)}
+.btn-ghost:hover{background:var(--deep);color:#fff}
+.text-link{font-weight:700;text-decoration:none;color:var(--deep);white-space:nowrap}
+.text-link:hover{color:var(--clay)}
+
+/* Hero */
+.hero2{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:36px;padding:48px 52px;box-shadow:0 20px 60px rgba(70,102,91,.10);overflow:hidden}
+.hero2 h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;color:var(--deeper);font-size:clamp(36px,5vw,58px);line-height:1.05;margin:0 0 18px}
+.hero2 h1 em{font-family:'Dancing Script',Georgia,serif;font-style:normal;color:var(--clay);font-size:1.12em}
+.hero2 .lead{font-size:19px;line-height:1.65;color:var(--muted);margin:0 0 28px;max-width:520px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+.hero-gift2{display:inline-block;font-size:15px;color:var(--deeper);text-decoration:none;background:#f3ebdf;padding:10px 16px;border-radius:14px}
+.hero-gift2:hover{background:#ece0cf}
+.hero-art{position:relative}
+.hero-art img{width:100%;aspect-ratio:1/1;max-height:540px;object-fit:cover;border-radius:26px;box-shadow:0 18px 40px rgba(51,77,66,.18)}
+.hero-art .bubble{position:absolute;left:-22px;bottom:26px;max-width:250px;background:#fff;border-radius:18px;padding:14px 16px;font:15px/1.45 Georgia,serif;color:var(--deeper);box-shadow:0 10px 30px rgba(0,0,0,.12)}
+
+/* Picture tiles */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tile{position:relative;display:block;border-radius:24px;overflow:hidden;text-decoration:none;background:#eadfce;aspect-ratio:4/5;box-shadow:0 12px 30px rgba(51,77,66,.12);transition:transform .2s,box-shadow .2s}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.tile:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(51,77,66,.2)}
+.tile:hover img{transform:scale(1.04)}
+.tile .tile-label{position:absolute;left:0;right:0;bottom:0;padding:60px 22px 20px;background:linear-gradient(180deg,rgba(30,40,35,0) 0%,rgba(30,40,35,.72) 60%,rgba(30,40,35,.85) 100%);color:#fff}
+.tile .tile-label strong{display:block;font:400 26px/1.15 Georgia,serif;margin-bottom:4px}
+.tile .tile-label span{font-size:15px;line-height:1.4;opacity:.95}
+.tile.is-xmas .tile-label strong::before{content:"\2744\FE0F  "}
+
+/* Latest answers */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pcard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 8px 24px rgba(51,77,66,.08);transition:transform .2s,box-shadow .2s}
+.pcard:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(51,77,66,.15)}
+.pcard img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.pcard .pc-body{padding:16px 18px 20px}
+.pcard .pc-tag{font:700 12px/1.3 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--clay-dark);margin:0 0 6px}
+.pcard h3{font:400 20px/1.25 Georgia,serif;color:var(--deeper);margin:0 0 8px}
+.pcard .pc-more{font-weight:700;font-size:15px;color:var(--deep)}
+.pcard.has-video .pc-media{position:relative}
+.pcard.has-video .pc-media::after{content:"\25B6";position:absolute;right:12px;bottom:12px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--clay);display:flex;align-items:center;justify-content:center;font-size:15px;padding-left:3px;box-shadow:0 4px 12px rgba(0,0,0,.18)}
+
+/* Christmas band */
+.xmas-band{display:grid;grid-template-columns:auto 1fr;gap:44px;align-items:center;background:linear-gradient(135deg,#7a2e25 0%,#9c4a3a 55%,#a85b46 100%);color:#fff;border-radius:36px;padding:44px 52px;box-shadow:0 20px 50px rgba(122,46,37,.25);position:relative;overflow:hidden}
+.xmas-band::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 15%,rgba(255,255,255,.14) 0,transparent 35%),radial-gradient(circle at 10% 90%,rgba(255,255,255,.08) 0,transparent 30%);pointer-events:none}
+.xmas-band img.cover{width:230px;border-radius:10px;box-shadow:0 18px 40px rgba(0,0,0,.35);transform:rotate(-3deg)}
+.xmas-band .h-eyebrow{color:#f6d7b8}
+.xmas-band h2{font:400 clamp(30px,4vw,44px)/1.1 Georgia,serif;margin:0 0 12px;color:#fff}
+.xmas-band p{color:#fbeee6;font-size:17px;line-height:1.65;margin:0 0 20px;max-width:560px}
+.xmas-band .btn{background:#fff;color:var(--xmas);box-shadow:none}
+.xmas-band .btn:hover{background:#f6e6dc}
+.xmas-band .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
+.xmas-band .btn-ghost:hover{background:rgba(255,255,255,.12)}
+.xmas-mini{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:22px;position:relative;z-index:1}
+.xmas-mini a{color:#fff;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:2px}
+.xmas-note{font-size:14px!important;color:#f3dcd0!important;margin:14px 0 0!important}
+.xmas-note a{color:#fff}
+.xmas-band .hero-btns{position:relative;z-index:1}
+
+/* Books shelf */
+.shelf{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.book{text-decoration:none;color:inherit;text-align:center}
+.book img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px;box-shadow:0 12px 26px rgba(51,77,66,.2);transition:transform .2s;background:#fff}
+.book:hover img{transform:translateY(-4px) rotate(-1deg)}
+.book strong{display:block;font:400 16px/1.3 Georgia,serif;color:var(--deeper);margin:12px 0 3px}
+.book span{font-size:13px;color:var(--muted)}
+.shelf-note{font-size:13px;color:var(--muted);margin-top:18px}
+
+/* Calm + free gifts */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.panel{display:grid;grid-template-columns:170px 1fr;gap:22px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:26px;padding:22px;box-shadow:0 8px 24px rgba(51,77,66,.07)}
+.panel img{width:170px;height:200px;object-fit:cover;border-radius:18px}
+.panel h3{font:400 24px/1.2 Georgia,serif;color:var(--deeper);margin:0 0 8px}
+.panel p{color:var(--muted);font-size:16px;line-height:1.55;margin:0 0 14px}
+.panel .links{display:flex;flex-wrap:wrap;gap:8px 18px}
+
+/* Meet the Sage */
+.meet{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:36px;padding:40px 48px}
+.meet img{width:300px;height:300px;object-fit:cover;object-position:30% 30%;border-radius:50%;border:8px solid #fff;box-shadow:0 14px 36px rgba(51,77,66,.18)}
+.meet blockquote{margin:0 0 14px;font:italic 20px/1.6 Georgia,serif;color:var(--deeper)}
+.meet .sig{font:700 34px/1 'Dancing Script',Georgia,serif;color:var(--clay);margin:0 0 18px}
+
+/* Stay close */
+.social{text-align:center;padding:48px 24px;background:#eef2ec;border-radius:36px}
+.social .row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:20px}
+.social .row a{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--deeper);text-decoration:none;font-weight:700;font-size:15px;padding:11px 18px;border-radius:999px;border:1px solid var(--line)}
+.social .row a:hover{border-color:var(--clay);color:var(--clay)}
+.blessing2{text-align:center;margin:56px auto 0;max-width:640px;font:italic 19px/1.7 Georgia,serif;color:var(--deeper)}
+.blessing2 .sig{font:700 28px 'Dancing Script',Georgia,serif;color:var(--clay);font-style:normal;margin-top:8px}
+
+/* Footer */
+.foot{max-width:1120px;margin:56px auto 0;padding:28px 22px 40px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px;color:var(--muted)}
+.foot nav{display:flex;flex-wrap:wrap;gap:6px 18px}
+.foot a{color:var(--deeper);text-decoration:none;font-weight:700}
+.foot .disc{flex-basis:100%;font-size:13px;margin:6px 0 0}
+
+@media(max-width:980px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .shelf{grid-template-columns:repeat(3,1fr)}
+  .duo{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .home{padding:0 16px 32px}
+  .hero2{grid-template-columns:1fr;padding:28px 22px;gap:26px;border-radius:28px}
+  .hero-art{order:-1}
+  .hero-art img{aspect-ratio:4/3;object-position:50% 25%}
+  .hero-art .bubble{display:none}
+  .hero2 .lead{font-size:17px}
+  .hero-btns .btn{flex:1 1 auto;text-align:center}
+  .h-section{margin-top:48px}
+  .tiles{grid-template-columns:1fr 1fr;gap:14px}
+  .tile{border-radius:18px}
+  .tile .tile-label{padding:40px 14px 14px}
+  .tile .tile-label strong{font-size:19px}
+  .tile .tile-label span{display:none}
+  .cards{gap:14px}
+  .pcard h3{font-size:17px}
+  .pcard .pc-body{padding:12px 14px 16px}
+  .xmas-band{grid-template-columns:1fr;padding:30px 22px;text-align:center;border-radius:28px;gap:22px}
+  .xmas-band img.cover{width:170px;margin:0 auto}
+  .xmas-band .hero-btns,.xmas-mini{justify-content:center}
+  .shelf{grid-template-columns:repeat(2,1fr);gap:16px}
+  .panel{grid-template-columns:110px 1fr;gap:16px;padding:16px}
+  .panel img{width:110px;height:140px}
+  .panel h3{font-size:20px}
+  .meet{grid-template-columns:1fr;text-align:center;padding:28px 22px;gap:20px}
+  .meet img{width:200px;height:200px;margin:0 auto}
+  .social{border-radius:28px;padding:36px 18px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
