@@ -1,0 +1,38 @@
+name: Update search index
+
+# Rebuilds search-index.json whenever pages change, so new recipes,
+# letters and reflections show up in the site search automatically.
+on:
+  push:
+    branches: [main]
+    paths: ['*.html', 'tools/build-search-index.py']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: python3 tools/build-search-index.py
+      - name: Save the updated index
+        run: |
+          if git diff --quiet -- search-index.json; then
+            echo "Search index already up to date"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898338+github-actions[bot]@users.noreply.github.com"
+          git add search-index.json
+          git commit -m "Update search index"
+          git push
+          # Make sure the live site picks up the new index
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
+        env:
+          GH_TOKEN: ${{ github.token }}

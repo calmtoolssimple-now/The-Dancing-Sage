@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TTYBJB411K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TTYBJB411K');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search | The Dancing Sage</title>
+  <meta name="description" content="Search The Dancing Sage for recipes, Ask the Sage letters and gentle reflections." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://askthedancingsage.com/search.html" />
+  <link rel="stylesheet" href="ask-the-sage.css">
+  <link rel="stylesheet" href="sage-content.css">
+</head>
+<body>
+<nav class="sage-navigation" aria-label="Main navigation"><a class="nav-brand" href="index.html">The Dancing Sage</a><div class="nav-links"><a href="ask.html">Ask the Sage</a><a href="easy-baking.html">Baking</a><a href="shop-grandmas-kitchen.html">Shop</a><a href="christmas.html" class="nav-xmas">Christmas</a><a href="christmas-gift-guide.html">Gift Guide</a><a href="colouring-for-beginners.html">Colouring</a><a href="wisdom.html">Wisdom</a><a href="index.html#books">Books</a><a href="about.html">About</a></div><a class="nav-search" aria-current="page" href="search.html" aria-label="Search the site" title="Search the site"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><span>Search</span></a></nav>
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">The Dancing Sage</p>
+      <h1>Search the site</h1>
+      <form class="site-search" role="search" action="search.html" method="get">
+        <label for="q" class="visually-hidden">Search for recipes, letters and reflections</label>
+        <input id="q" name="q" type="search" placeholder="Try shortbread, Christmas or friends" autocomplete="off" />
+        <button type="submit">Search</button>
+      </form>
+      <p class="search-ideas">Popular: <a href="search.html?q=shortbread">shortbread</a> · <a href="search.html?q=christmas">Christmas</a> · <a href="search.html?q=apple+pie">apple pie</a> · <a href="search.html?q=friends">making friends</a> · <a href="search.html?q=patience">patience</a></p>
+    </section>
+    <section class="card" aria-live="polite">
+      <p id="search-status" class="search-status">Type a word or two above to find recipes, Ask the Sage letters and reflections.</p>
+      <ol id="search-results" class="search-results"></ol>
+    </section>
+  </main>
+<footer class="sage-footer"><a href="index.html">Home</a> · <a href="ask.html">Ask the Sage</a> · <a href="wisdom.html">Wisdom Library</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy Policy</a><p>© 2026 Calm &amp; Simple · The Dancing Sage</p><p class="amazon-disclosure" style="font-size:0.85em;opacity:0.8;margin-top:8px">As an Amazon Associate I earn from qualifying purchases.</p></footer>
+<script>
+(function () {
+  var input = document.getElementById('q');
+  var status = document.getElementById('search-status');
+  var list = document.getElementById('search-results');
+  var pages = null;
+
+  function norm(s) {
+    return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[\u2018\u2019']/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+  }
+  function stem(w) {
+    if (w.length > 3 && /s$/.test(w) && !/ss$/.test(w)) return w.slice(0, -1);
+    return w;
+  }
+  var STOP = {};
+  'a an and the of to in on for is it my i me do how what why with at or be can you your'.split(' ').forEach(function (w) { STOP[w] = 1; });
+  function words(q) {
+    return norm(q).split(' ').filter(function (w) { return w && !STOP[w]; }).map(stem);
+  }
+  function escapeHtml(s) {
+    return s.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; });
+  }
+  function snippet(p, terms) {
+    var d = (p.description || '').toLowerCase();
+    if (terms.some(function (t) { return d.indexOf(t) > -1; })) return p.description;
+    var text = p.text || '';
+    var low = text.toLowerCase();
+    var best = -1;
+    terms.forEach(function (t) { var i = low.indexOf(t); if (i > -1 && (best === -1 || i < best)) best = i; });
+    if (best < 0) return p.description || text.slice(0, 160);
+    var start = Math.max(0, best - 70);
+    var s = text.slice(start, start + 200);
+    if (start > 0) s = '… ' + s.replace(/^\S*\s/, '');
+    return s.replace(/\s\S*$/, '') + ' …';
+  }
+  function highlight(s, terms) {
+    var out = escapeHtml(s);
+    terms.forEach(function (t) {
+      if (t.length < 3) return;
+      out = out.replace(new RegExp('(\\b' + t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '[a-z]*)', 'gi'), '<mark>$1</mark>');
+    });
+    return out;
+  }
+  function score(p, terms) {
+    var title = norm(p.title), desc = norm(p.description), sec = norm(p.section), text = norm(p.text);
+    var total = 0, matched = 0;
+    terms.forEach(function (t) {
+      var s = 0;
+      if (title.indexOf(t) > -1) s += 10;
+      if (desc.indexOf(t) > -1) s += 5;
+      if (sec.indexOf(t) > -1) s += 3;
+      var n = text.split(t).length - 1;
+      if (n) s += Math.min(n, 5);
+      if (s) matched++;
+      total += s;
+    });
+    return { score: total, all: matched === terms.length, any: matched > 0 };
+  }
+  function run(q) {
+    var terms = words(q);
+    list.innerHTML = '';
+    if (!terms.length) { status.textContent = 'Type a word or two above to find recipes, Ask the Sage letters and reflections.'; return; }
+    var scored = pages.map(function (p) { var r = score(p, terms); r.p = p; return r; });
+    var hits = scored.filter(function (r) { return r.all; });
+    var partial = false;
+    if (!hits.length) { hits = scored.filter(function (r) { return r.any; }); partial = hits.length > 0; }
+    hits.sort(function (a, b) { return b.score - a.score; });
+    if (!hits.length) {
+      status.innerHTML = 'Nothing found for <strong>' + escapeHtml(q) + '</strong>. Try a simpler word, or <a href="ask.html#ask">ask the Sage your question</a>.';
+      return;
+    }
+    status.innerHTML = hits.length + (hits.length === 1 ? ' result' : ' results') + ' for <strong>' + escapeHtml(q) + '</strong>' + (partial ? ' (showing pages that match some of your words)' : '');
+    list.innerHTML = hits.slice(0, 30).map(function (r) {
+      var p = r.p;
+      return '<li><p class="sr-tag">' + escapeHtml(p.section) + '</p><a class="sr-title" href="' + p.url + '">' + highlight(p.title, terms) + '</a><p class="sr-snippet">' + highlight(snippet(p, terms), terms) + '</p></li>';
+    }).join('');
+  }
+  var params = new URLSearchParams(location.search);
+  var initial = params.get('q') || '';
+  input.value = initial;
+  if (!initial) input.focus();
+  fetch('search-index.json').then(function (r) { return r.json(); }).then(function (data) {
+    pages = data;
+    if (initial) run(initial);
+    var timer;
+    input.addEventListener('input', function () {
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        run(input.value);
+        var u = new URL(location.href);
+        if (input.value.trim()) u.searchParams.set('q', input.value.trim()); else u.searchParams.delete('q');
+        history.replaceState(null, '', u);
+      }, 200);
+    });
+  }).catch(function () {
+    status.textContent = 'Sorry, search isn\u2019t working right now. Please try again in a moment.';
+  });
+})();
+</script>
+</body>
+</html>
